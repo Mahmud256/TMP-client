@@ -3,8 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import RegisterAuth from './RegisterAuth';
 import { updateProfile } from 'firebase/auth';
-import Navbar from '../../components/Header/Navbar';
 import { AuthContext } from '../../providers/AuthProvider';
+
 
 
 const Register = () => {
@@ -84,7 +84,6 @@ const Register = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col">
                     <div className="text-center">
