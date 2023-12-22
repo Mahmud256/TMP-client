@@ -86,11 +86,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Right Side: Icons and Buttons */}
-            <div className="flex items-center space-x-4">
-                {/* You can add other buttons or icons here if needed */}
-            </div>
-
             {/* Mobile Menu Toggle Button */}
             <div className='md:hidden'>
                 <button
