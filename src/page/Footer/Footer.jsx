@@ -14,18 +14,6 @@ const Footer = () => {
                         Gulshan-2, Dhaka-1212, Bangladesh
                     </p>
                 </div>
-
-                <nav className="grid grid-flow-col gap-4 text-[#eef0f1] mt-4">
-                    <Link to={`/story`}>
-                        Our Story
-                    </Link>
-                    <Link to={`/`}>
-                        Home
-                    </Link>
-                    <Link to={`/contact`}>
-                        Contact Us
-                    </Link>
-                </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4 text-[#eef0f1]">
                         <a href="https://twitter.com/">

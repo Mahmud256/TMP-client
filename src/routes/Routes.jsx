@@ -7,6 +7,12 @@ import Register from "../page/Register/Register";
 import Dashboard from "../page/Dashboard/Dashboard"
 import PrivateRoute from "./PrivateRoute";
 import LoginAuth from "../page/Login/LoginAuth";
+import CreateTask from "../components/CreateTask/CreateTask";
+import UpdateTask from "../components/UpdateTask/UpdateTask";
+import MyTask from "../page/MyTask/MyTask";
+import AboutUs from "../page/AboutUs/AboutUs";
+import ContactUs from "../page/ContactUs/ContactUs";
+import Details from "../page/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -31,8 +37,36 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: '/about',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/contact',
+                element: <ContactUs></ContactUs>
+            },
+            {
+                path: '/mytask',
+                element: <PrivateRoute><MyTask></MyTask></PrivateRoute>,
+                loader: () => fetch('https://tmp-server-zeta.vercel.app/task')
+            },
+            {
+                path: '/details/:_id',
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: () => fetch('https://tmp-server-zeta.vercel.app/task')
+            },
+            {
                 path: '/dashboard',
-                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+                loader: () => fetch('https://tmp-server-zeta.vercel.app/task')
+            },
+            {
+                path: '/create',
+                element: <PrivateRoute><CreateTask></CreateTask></PrivateRoute>
+            },
+            {
+                path: '/updatetask/:id',
+                element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://tmp-server-zeta.vercel.app/task/${params.id}`)
             }
         ]
     },

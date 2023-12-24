@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-import MyTaskCard from '../MyTask/MyTaskCard';
+import MyTaskCard from './MyTaskCard';
 import Swal from 'sweetalert2';
 
-const Dashboard = () => {
+const MyTask = () => {
     const loadedTasks = useLoaderData(); // Assuming useLoaderData is a custom hook for loading tasks
     const [tasks, setTasks] = useState(loadedTasks);
     const { user } = useContext(AuthContext);
@@ -22,7 +22,6 @@ const Dashboard = () => {
                 }
             });
     }, []);
-
     const handleRemove = (_id) => {
         const taskToDelete = tasks.find((task) => task._id === _id);
 
@@ -56,9 +55,6 @@ const Dashboard = () => {
     }
     return (
         <div className='h-screen max-w-screen-xl mx-auto'>
-            <Link to={`/create`}>
-                <button className='btn text-white bg-red-500 hover:bg-red-400'>Create Task</button>
-            </Link>
             <div className='max-w-[1300px] mx-auto'>
 
                 {tasks.length > 0 ? (
@@ -85,4 +81,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default MyTask;
